@@ -4,6 +4,38 @@ const START_DATE = new Date(2024, 5, 1, 0, 0, 0);
 let currentInput = "";
 let isPlaying = false;
 
+// ฟังก์ชันสลับการ์ดทีละใบ
+function changeStep(className, direction) {
+  const cards = document.querySelectorAll('.' + className);
+  let currentIndex = -1;
+
+  cards.forEach((card, idx) => {
+    if (card.classList.contains('active')) {
+      currentIndex = idx;
+    }
+  });
+
+  if (currentIndex !== -1) {
+    cards[currentIndex].classList.remove('active');
+    let nextIndex = currentIndex + direction;
+
+    if (nextIndex < 0) nextIndex = 0;
+    if (nextIndex >= cards.length) nextIndex = cards.length - 1;
+
+    cards[nextIndex].classList.add('active');
+
+    // อัปเดตตัวเลขบอกหน้า (เช่น 1 / 3)
+    let indicatorId = "";
+    if (className === 'timeline-step') indicatorId = 'timeline-step-indicator';
+    if (className === 'reason-step') indicatorId = 'reason-step-indicator';
+    if (className === 'place-step') indicatorId = 'place-step-indicator';
+
+    if (indicatorId && document.getElementById(indicatorId)) {
+      document.getElementById(indicatorId).innerText = `${nextIndex + 1} / ${cards.length}`;
+    }
+  }
+}
+
 function toggleAudio() {
   const audio = document.getElementById('bg-music');
   const label = document.getElementById('audio-label');
