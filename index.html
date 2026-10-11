@@ -122,8 +122,15 @@
           <p>ความลับ</p>
         </div>
       </div>
+
+      <div class="menu-card" onclick="showSection('sec-guestbook')">
+        <div class="card-icon">🎉</div>
+        <div class="card-info">
+          <h3>Guestbook</h3>
+          <p>คำอวยพรจากคนที่อ้วนรัก</p>
+        </div>
+      </div>
     </div>
-  </div>
 
   <!-- MODAL CONTAINER -->
   <div id="content-modal" class="modal">
@@ -285,6 +292,20 @@
             <p>มีแต่คนที่รักรายล้อม นี่จะอยู่ข้างอ้วนเสมอ รักเหมือนเดิมทุกวัน</p>
             <p class="sign">love you as always</p>
           </div>
+        </div>
+      </div>
+      <!-- GUESTBOOK (PADLET EMBED) -->
+      <div id="sec-guestbook" class="section-content">
+        <h2 class="modal-title">Friends' Wishes 💌</h2>
+        <p class="modal-subtitle">คำอวยพรน่ารักๆ จากทุกคนถึงอ้วน</p>
+
+        <div style="width: 100%; border-radius: 18px; overflow: hidden; border: 1px solid var(--pastel-pink); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <iframe 
+            src="https://padlet.com/embed/s024ecfaiwrxnzt0ywts" 
+            frameborder="0" 
+            allow="camera; microphone; geolocation" 
+            style="width: 100%; height: 480px; display: block; border: none;">
+          </iframe>
         </div>
       </div>
 
