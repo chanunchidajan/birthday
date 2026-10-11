@@ -3,36 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Stop 💖</title>
+  <title>Happy Birthday Stop 🌸✨</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Fonts: Playfair Display, Montserrat & Prompt -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="sparkle-bg"></div>
+  <!-- Pastel Ambient Lighting -->
+  <div class="glow-bg glow-pink"></div>
+  <div class="glow-bg glow-purple"></div>
+  <div class="glow-bg glow-blue"></div>
 
-  <!-- หน้าแรก: Cover -->
+  <!-- Audio Player Controls -->
+  <div class="audio-control" onclick="toggleAudio()">
+    <span id="audio-icon">🎵</span>
+    <span id="audio-label">Play Music</span>
+  </div>
+  <audio id="bg-music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- COVER PAGE -->
   <div id="page-cover" class="page active">
-    <div class="card cover-card">
-      <div class="luxury-badge">✨ HAPPY BIRTHDAY ✨</div>
-      <div class="photo-frame-hero">
-        <img src="us.jpg" alt="Stop Birthday" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800'">
+    <div class="card pastel-card">
+      <div class="glam-badge">✨ CELEBRATING STOP'S DAY ✨</div>
+      <div class="hero-frame">
+        <img src="us.jpg" alt="Stop" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800'">
       </div>
-      <h1 class="hero-title">Happy Birthday<br><span class="highlight-name">Stop 🎀</span></h1>
-      <p class="hero-subtitle">To my favorite person in the world</p>
-      <button type="button" class="btn-pink" onclick="goToPage('page-password')">
-        <span>Enter My Heart</span>
-        <i class="arrow">💖</i>
+      <h1 class="hero-title">Happy Birthday<br><span class="highlight-text">Stop 🎀</span></h1>
+      <p class="hero-subtitle">To my favorite person in the whole wide world</p>
+      <button type="button" class="btn-pastel-glam" onclick="goToPage('page-password')">
+        <span>ENTER MY HEART</span>
+        <span class="btn-arrow">💖</span>
       </button>
     </div>
   </div>
 
-  <!-- หน้าใส่รหัสผ่านวันครบรอบ -->
+  <!-- PASSWORD PAGE -->
   <div id="page-password" class="page">
-    <div class="card">
+    <div class="card pastel-card">
       <div class="lock-icon">🔒</div>
-      <h2 class="section-title">Anniversary Lock</h2>
+      <h2 class="section-title">Anniversary Vault</h2>
       <p class="hint">ใส่วันครบรอบของเรา (010624)</p>
       
       <input type="password" id="pass-display" readonly placeholder="• • • • • •">
@@ -55,142 +66,180 @@
     </div>
   </div>
 
-  <!-- หน้าเมนูหลัก -->
+  <!-- MAIN MENU PAGE -->
   <div id="page-menu" class="page">
     <div class="header-banner">
-      <p class="small-tag">FOR MY SWEETHEART</p>
-      <h2 class="menu-title">Stop's World 💕</h2>
+      <p class="glam-badge">SWEET MEMORIES COLLECTION</p>
+      <h2 class="menu-title">Stop's World 🌸</h2>
     </div>
 
     <div class="menu-grid">
       <div class="menu-card" onclick="showSection('sec-timer')">
         <div class="card-icon">⏳</div>
-        <div class="card-text">
+        <div class="card-info">
           <h3>Days Together</h3>
-          <p>เวลาที่เราได้คบและอยู่ด้วยกัน</p>
+          <p>เวลาที่เราคบกันตั้งแต่วันแรก</p>
         </div>
       </div>
 
       <div class="menu-card" onclick="showSection('sec-gallery')">
-        <div class="card-icon">📷</div>
-        <div class="card-text">
-          <h3>Our Photo Gallery</h3>
-          <p>รูปภาพความทรงจำของเราสองคน</p>
+        <div class="card-icon">📸</div>
+        <div class="card-info">
+          <h3>Photo Gallery</h3>
+          <p>อัลบั้มรูปคู่สไตล์โพลารอยด์สุดหวาน</p>
+        </div>
+      </div>
+
+      <!-- ฟีเจอร์ที่ 3: Memory Timeline -->
+      <div class="menu-card" onclick="showSection('sec-timeline')">
+        <div class="card-icon">💎</div>
+        <div class="card-info">
+          <h3>Our Love Timeline</h3>
+          <p>เส้นทางความรักและความทรงจำสำคัญ</p>
+        </div>
+      </div>
+
+      <!-- ฟีเจอร์ที่ 5: Reasons I Love You -->
+      <div class="menu-card" onclick="showSection('sec-reasons')">
+        <div class="card-icon">💌</div>
+        <div class="card-info">
+          <h3>Reasons I Love You</h3>
+          <p>เหตุผลที่ตกหลุมรักสต้อปในทุกๆ วัน</p>
         </div>
       </div>
 
       <div class="menu-card" onclick="showSection('sec-places')">
         <div class="card-icon">📍</div>
-        <div class="card-text">
-          <h3>Our Favorite Places</h3>
-          <p>สถานที่ที่เราชอบไปทำกิจกรรมด้วยกัน</p>
+        <div class="card-info">
+          <h3>Favorite Places</h3>
+          <p>สถานที่ความทรงจำที่เราชอบไปกัน</p>
         </div>
       </div>
 
-      <div class="menu-card" onclick="showSection('sec-feelings')">
-        <div class="card-icon">💭</div>
-        <div class="card-text">
-          <h3>Deep Thoughts</h3>
-          <p>ความในใจและความรู้สึกที่มีต่อสต้อป</p>
-        </div>
-      </div>
-
-      <div class="menu-card" onclick="showSection('sec-wish')">
-        <div class="card-icon">💌</div>
-        <div class="card-text">
-          <h3>Birthday Wish</h3>
-          <p>คำอวยพรและจดหมายลับสุดพิเศษ</p>
+      <div class="menu-card" onclick="showSection('sec-letter')">
+        <div class="card-icon">🎀</div>
+        <div class="card-info">
+          <h3>Birthday Letter</h3>
+          <p>จดหมายและคำอวยพรสุดพิเศษ</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Popup Modal แสดงรายละเอียดแต่ละเมนู -->
+  <!-- MODAL CONTAINER -->
   <div id="content-modal" class="modal">
     <div class="modal-body">
       <button type="button" class="close-btn" onclick="closeModal()">✕ กลับหน้าเมนู</button>
       
-      <!-- 1. นับเวลา -->
+      <!-- 1. TIMER -->
       <div id="sec-timer" class="section-content">
-        <h2 class="modal-title">Time Together</h2>
-        <p class="modal-subtitle">เราคบกันมานานเท่าไหร่แล้ว 💕</p>
+        <h2 class="modal-title">Days Together</h2>
+        <p class="modal-subtitle">ตั้งแต่วันแรกที่เริ่มคบกัน (01/06/2024)</p>
         <div class="timer-grid">
           <div class="time-box"><span id="days">0</span><small>DAYS</small></div>
           <div class="time-box"><span id="hours">0</span><small>HOURS</small></div>
           <div class="time-box"><span id="minutes">0</span><small>MINS</small></div>
           <div class="time-box"><span id="seconds">0</span><small>SECS</small></div>
         </div>
-        <p class="quote">"ตั้งแต่วันที่ 01/06/2024 ทุกวันก็มีความหมายมากขึ้นเพราะสต้อปนะ 💗"</p>
+        <p class="quote">"ทุกนาทีที่ได้มีสต้อปอยู่ในชีวิต คือช่วงเวลาที่ดีที่สุดเลยนะ 💗"</p>
       </div>
 
-      <!-- 2. อัลบั้มรูป -->
+      <!-- 2. GALLERY -->
       <div id="sec-gallery" class="section-content">
-        <h2 class="modal-title">Photo Album</h2>
+        <h2 class="modal-title">Our Moments</h2>
         <p class="modal-subtitle">ปัดซ้าย-ขวาเพื่อดูรูปของเรา 📸</p>
-        
         <div class="album-slider">
-          <div class="polaroid-card">
-            <div class="polaroid-img">
-              <img src="us.jpg" alt="Photo 1" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600'">
-            </div>
-            <p class="polaroid-caption">First Memory 🤍</p>
+          <div class="pastel-polaroid">
+            <img src="us.jpg" alt="Photo 1" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600'">
+            <p>Sweet Memories 💖</p>
           </div>
-
-          <div class="polaroid-card">
-            <div class="polaroid-img">
-              <img src="us2.jpg" alt="Photo 2" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600'">
-            </div>
-            <p class="polaroid-caption">Date Night ☕</p>
+          <div class="pastel-polaroid">
+            <img src="us2.jpg" alt="Photo 2" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600'">
+            <p>Our Favorite Date ☕</p>
           </div>
-
-          <div class="polaroid-card">
-            <div class="polaroid-img">
-              <img src="us3.jpg" alt="Photo 3" onerror="this.src='https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=600'">
-            </div>
-            <p class="polaroid-caption">Your Cute Smile 😊</p>
+          <div class="pastel-polaroid">
+            <img src="us3.jpg" alt="Photo 3" onerror="this.src='https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=600'">
+            <p>Your Cute Smile ✨</p>
           </div>
         </div>
       </div>
 
-      <!-- 3. สถานที่ที่ชอบ -->
+      <!-- 3. MEMORY TIMELINE (ฟีเจอร์ที่ 3) -->
+      <div id="sec-timeline" class="section-content">
+        <h2 class="modal-title">Love Timeline</h2>
+        <p class="modal-subtitle">หมุดบันทึกการเดินทางของเราสองคน ✨</p>
+        <div class="timeline-box">
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <small>01 JUNE 2024</small>
+              <h4>The Beginning 💖</h4>
+              <p>วันแรกที่เราตกลงคบกัน และเริ่มต้นเรื่องราวความรักสุดพิเศษนี้</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <small>SPECIAL MOMENT</small>
+              <h4>First Trip Together 🌊</h4>
+              <p>ทริปแรกที่เราได้ไปเที่ยวและสร้างความทรงจำดีๆ ร่วมกัน</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <small>TODAY</small>
+              <h4>Happy Birthday Stop 🎂</h4>
+              <p>ฉลองวันเกิดสต้อปอีกปี ขอให้อยู่ด้วยกันแบบนี้ไปเรื่อยๆ เลยนะ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. REASONS I LOVE YOU (ฟีเจอร์ที่ 5) -->
+      <div id="sec-reasons" class="section-content">
+        <h2 class="modal-title">Why I Love You</h2>
+        <p class="modal-subtitle">เหตุผลที่ตกหลุมรักสต้อปซ้ำๆ 🌸</p>
+        <div class="reasons-grid">
+          <div class="reason-card">
+            <span class="badge">01</span>
+            <p>รอยยิ้มและความสดใสของสต้อปที่ทำให้วันแย่ๆ สดใสขึ้นได้ทันที</p>
+          </div>
+          <div class="reason-card">
+            <span class="badge">02</span>
+            <p>ความใส่ใจในรายละเอียดเล็กๆ น้อยๆ และความน่ารักที่มีให้กันเสมอ</p>
+          </div>
+          <div class="reason-card">
+            <span class="badge">03</span>
+            <p>การเป็น Safe Zone ที่ดีที่สุด อยู่ด้วยแล้วรู้สึกสบายใจและเป็นตัวเองได้เต็มที่</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLACES -->
       <div id="sec-places" class="section-content">
         <h2 class="modal-title">Favorite Spots</h2>
-        <p class="modal-subtitle">สถานที่แห่งความทรงจำของเรา 🗺️</p>
         <div class="places-list">
           <div class="place-card">
-            <h4>☕ คาเฟ่โปรดของเรา</h4>
-            <p>ที่ที่เราชอบไปนั่งกินขนม ดื่มกาแฟ และนั่งคุยกันเพลินๆ</p>
+            <h4>☕ คาเฟ่บรรยากาศดีๆ</h4>
+            <p>มุมโปรดนั่งจิบเครื่องดื่มและคุยกันยาวๆ</p>
           </div>
           <div class="place-card">
-            <h4>🌊 ทะเล / ที่เที่ยวธรรมชาติ</h4>
-            <p>ที่ที่เราได้ไปสูดอากาศบริสุทธิ์และถ่ายรูปสวยๆ ด้วยกัน</p>
-          </div>
-          <div class="place-card">
-            <h4>🍿 โรงหนัง / ร้านอาหารมื้อดึก</h4>
-            <p>จุดปักหมุดประจำเวลาเลิกงานหรือวันหยุดสุดสัปดาห์</p>
+            <h4>🍽️ ร้านอาหารมื้อพิเศษ</h4>
+            <p>ที่ที่เราชอบไปกินของอร่อยๆ เติมพลังด้วยกัน</p>
           </div>
         </div>
       </div>
 
-      <!-- 4. ความในใจ -->
-      <div id="sec-feelings" class="section-content">
-        <h2 class="modal-title">From My Heart</h2>
-        <div class="feeling-box">
-          <p>ถึงสต้อป...</p>
-          <p>ขอบคุณที่เป็นความน่ารักและเป็นรอยยิ้มให้กับเราในทุกๆ วันนะ ไม่ว่าจะเหนื่อยจากอะไรมา พอได้คุยได้เจอสต้อปก็รู้สึกสบายใจขึ้นเสมอเลย</p>
-          <p>ดีใจมากๆ ที่ได้มีสต้อปอยู่ในชีวิตนะ 💕</p>
-        </div>
-      </div>
-
-      <!-- 5. คำอวยพรวันเกิด -->
-      <div id="sec-wish" class="section-content">
-        <h2 class="modal-title">Happy Birthday Wish</h2>
-        <div class="luxury-envelope" onclick="toggleLetter()">
-          <p class="env-title">💌 กดตรงนี้เพื่อเปิดอ่านการ์ดอวยพร</p>
-          <div id="letter-body" class="letter-content hidden">
+      <!-- LETTER -->
+      <div id="sec-letter" class="section-content">
+        <h2 class="modal-title">Birthday Wish</h2>
+        <div class="envelope-card" onclick="toggleLetter()">
+          <p class="env-text">💌 กดเพื่อเปิดอ่านการ์ดวันเกิดสุดพิเศษ</p>
+          <div id="letter-body" class="letter-body hidden">
             <h3>Happy Birthday นะครับสต้อป! 🎉</h3>
-            <p>ขอให้วันเกิดปีนี้มีความสุขมากๆ มีแต่รอยยิ้ม ขอให้ได้กินของอร่อยที่ชอบ สุขภาพแข็งแรง และสมหวังในสิ่งที่ตั้งใจทำทุกอย่างเลยนะ</p>
-            <p>อยากอยู่เคียงข้างและอวยพรวันเกิดแบบนี้ให้สต้อปไปทุกๆ ปีเลยครับ ❤️</p>
+            <p>ขอให้วันเกิดปีนี้เต็มไปด้วยรอยยิ้ม ความสุข สุขภาพแข็งแรง และสมหวังในทุกเรื่องเลยนะ</p>
+            <p>ขอบคุณที่เป็นความน่ารักในชีวิตกันเสมอมา อยากเคียงข้างและอวยพรวันเกิดให้สต้อปแบบนี้ทุกๆ ปีเลยครับ 💖</p>
             <p class="sign">Love You Always ✨</p>
           </div>
         </div>

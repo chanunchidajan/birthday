@@ -1,10 +1,26 @@
-// ประกาศตัวแปรตั้งค่าด้านบนสุด
 const CORRECT_PASSWORD = "010624"; 
-const BIRTH_DATE = new Date(2024, 5, 1, 0, 0, 0); 
+const START_DATE = new Date(2024, 5, 1, 0, 0, 0); 
 
 let currentInput = "";
+let isPlaying = false;
 
-// ฟังก์ชันสลับหน้า
+function toggleAudio() {
+  const audio = document.getElementById('bg-music');
+  const label = document.getElementById('audio-label');
+  const icon = document.getElementById('audio-icon');
+
+  if (isPlaying) {
+    audio.pause();
+    label.innerText = "Play Music";
+    icon.innerText = "🎵";
+  } else {
+    audio.play().catch(() => {});
+    label.innerText = "Pause Music";
+    icon.innerText = "🎶";
+  }
+  isPlaying = !isPlaying;
+}
+
 function goToPage(pageId) {
   const pages = document.querySelectorAll('.page');
   pages.forEach(p => p.classList.remove('active'));
@@ -15,7 +31,6 @@ function goToPage(pageId) {
   }
 }
 
-// ฟังก์ชันแป้นพิมพ์รหัสผ่าน
 function pressKey(num) {
   if (currentInput.length < 6) {
     currentInput += num;
@@ -37,13 +52,12 @@ function checkPassword() {
     startTimer();
   } else {
     if (document.getElementById('pass-error')) {
-      document.getElementById('pass-error').innerText = "รหัสผ่านไม่ถูกต้อง ลองใหม่อีกครั้งครับ";
+      document.getElementById('pass-error').innerText = "รหัสผ่านไม่ถูกต้อง ลองใหม่อีกครั้งนะ 💕";
     }
     clearKey();
   }
 }
 
-// ฟังก์ชันเปิด-ปิด Modal แสดงเนื้อหา
 function showSection(secId) {
   const secs = document.querySelectorAll('.section-content');
   secs.forEach(s => s.style.display = 'none');
@@ -66,11 +80,10 @@ function toggleLetter() {
   }
 }
 
-// ฟังก์ชันนับเวลา
 function startTimer() {
   setInterval(() => {
     const now = new Date();
-    const diff = now - BIRTH_DATE;
+    const diff = now - START_DATE;
 
     if (diff < 0) return;
 
