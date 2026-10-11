@@ -1,22 +1,18 @@
-// 1. ตั้งรหัสผ่าน (วันเกิด เช่น 010624 หรือตามที่คุณตั้ง)
 const CORRECT_PASSWORD = "010624"; 
-
-// 2. ตั้งวัน/เดือน/ปีเกิด เพื่อใช้นับเวลา (ปี ค.ศ., เดือน-1, วัน, ชั่วโมง, นาที, วินาที)
-// ตัวอย่าง: เกิดวันที่ 1 มิถุนายน 2024 -> new Date(2024, 5, 1, 0, 0, 0)
 const BIRTH_DATE = new Date(2024, 5, 1, 0, 0, 0); 
 
 let currentInput = "";
 
-// ฟังก์ชันสลับหน้าหลัก
 function goToPage(pageId) {
-  document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+  const pages = document.querySelectorAll('.page');
+  pages.forEach(p => p.classList.remove('active'));
+  
   const targetPage = document.getElementById(pageId);
   if (targetPage) {
     targetPage.classList.add('active');
   }
 }
 
-// ฟังก์ชันปุ่มกดรหัสผ่าน
 function pressKey(num) {
   if (currentInput.length < 6) {
     currentInput += num;
@@ -40,9 +36,10 @@ function checkPassword() {
   }
 }
 
-// ฟังก์ชันเปิด Modal แสดงเนื้อหาแต่ละเมนู
 function showSection(secId) {
-  document.querySelectorAll('.section-content').forEach(sec => sec.style.display = 'none');
+  const secs = document.querySelectorAll('.section-content');
+  secs.forEach(s => s.style.display = 'none');
+  
   const targetSec = document.getElementById(secId);
   if (targetSec) {
     targetSec.style.display = 'block';
@@ -61,7 +58,6 @@ function toggleLetter() {
   }
 }
 
-// ฟังก์ชันคำนวณเวลานับถอยหลัง / เวลาที่ผ่านไป
 function startTimer() {
   setInterval(() => {
     const now = new Date();

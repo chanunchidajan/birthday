@@ -40,7 +40,7 @@ body {
 }
 
 .page {
-  display: none;
+  display: none !important;
   width: 100%;
   max-width: 420px;
   padding: 24px;
@@ -50,8 +50,8 @@ body {
 }
 
 .page.active {
-  display: block;
-  animation: fadeIn 0.6s ease-in-out;
+  display: block !important;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -119,7 +119,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Password View */
 .lock-icon { font-size: 2rem; margin-bottom: 10px; }
 .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--primary-brown); }
 .hint { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; }
@@ -162,8 +161,8 @@ body {
 
 .btn-sub { background: var(--light-beige) !important; }
 .btn-enter { background: var(--accent-gold) !important; color: #fff !important; }
+.error-text { color: #d9534f; font-size: 0.85rem; margin-top: 12px; }
 
-/* Menu View */
 .header-banner { margin-bottom: 20px; text-align: left; }
 .small-tag { font-size: 0.75rem; letter-spacing: 2px; color: var(--accent-gold); font-weight: 600; }
 .menu-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--primary-brown); }
@@ -189,7 +188,6 @@ body {
 .card-text h3 { font-size: 1rem; color: var(--primary-brown); font-weight: 600; }
 .card-text p { font-size: 0.8rem; color: var(--text-muted); }
 
-/* Modal & Content */
 .modal {
   display: none;
   position: fixed;
@@ -228,14 +226,12 @@ body {
 .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--primary-brown); }
 .modal-subtitle { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; }
 
-/* Timer Box */
 .timer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0; }
 .time-box { background: var(--bg-color); padding: 16px; border-radius: 16px; border: 1px solid var(--light-beige); }
 .time-box span { font-size: 1.8rem; font-weight: 600; color: var(--accent-gold); display: block; }
 .time-box small { font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); }
 .quote { font-style: italic; font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; }
 
-/* Polaroid Slider (การ์ดอัลบั้มเลื่อนได้) */
 .album-slider {
   display: flex;
   overflow-x: auto;
@@ -268,14 +264,12 @@ body {
   margin-top: 12px;
 }
 
-/* Timeline Box */
 .timeline-container { display: flex; flex-direction: column; gap: 16px; text-align: left; }
 .timeline-box { background: var(--bg-color); padding: 16px; border-radius: 16px; border-left: 3px solid var(--accent-gold); }
 .date-tag { font-size: 0.7rem; color: var(--accent-gold); font-weight: 600; letter-spacing: 1px; }
 .timeline-box h4 { color: var(--primary-brown); font-size: 1rem; margin: 4px 0; }
 .timeline-box p { font-size: 0.85rem; color: var(--text-muted); }
 
-/* Envelope Letter */
 .luxury-envelope {
   background: var(--bg-color);
   padding: 20px;
