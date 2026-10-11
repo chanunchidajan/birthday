@@ -330,3 +330,19 @@ body {
 .letter-body h3 { color: var(--glam-pink); margin-bottom: 8px; font-weight: 700; }
 .sign { text-align: right; margin-top: 12px; font-weight: 600; color: var(--glam-purple); }
 .hidden { display: none; }
+/* Styling รูปภาพใน Love Timeline */
+.timeline-img-wrapper {
+  width: 100%;
+  height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid var(--pastel-pink);
+}
+
+.timeline-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
