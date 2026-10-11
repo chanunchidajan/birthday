@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Mali', 'Mitr', cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* พื้นหลังหลักของเว็บ: โทนสีครีมขาวอมชมพูละมุน */
+body {
+  background-color: #fdf8f5;
+  color: #4a3b32; /* สีฟอนต์หลัก: น้ำตาลเข้มอ่านง่าย */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page {
+  display: none;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+}
+
+.page.active {
+  display: block;
+}
+
+/* การ์ดเน้นสีขาว ตัดขอบด้วยสีชมพูละมุน */
+.card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(181, 131, 141, 0.15);
+  border: 2px solid #f4e3e6;
+}
+
+.photo-frame img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(109, 76, 65, 0.12);
+  margin-bottom: 15px;
+}
+
+/* หัวข้อหลัก: สีน้ำตาลอุ่น */
+.title {
+  color: #6d4c41;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* ปุ่มหลัก: โทนสีชมพูกุหลาบอบอุ่น (Rose Dust) */
+.btn {
+  background: #b5838d;
+  color: #ffffff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #a06c76;
+}
+
+/* หน้าใส่รหัสผ่าน */
+.hint {
+  font-size: 0.85rem;
+  color: #8d7b73;
+  margin-bottom: 15px;
+}
+
+#pass-display {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #e2c0c7;
+  background: #fdf0f2;
+  color: #4a3b32;
+  margin-bottom: 15px;
+  letter-spacing: 5px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.keypad button {
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  border: none;
+  background: #f5eae4; /* สีครีมนม */
+  color: #5d4037;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.keypad button:active {
+  background: #e0b1b8;
+  color: #ffffff;
+}
+
+.btn-sub {
+  font-size: 0.9rem !important;
+  background: #eae2d6 !important; /* น้ำตาลเบจชานม */
+  color: #5d4037 !important;
+}
+
+.btn-enter {
+  background: #e0a96d !important; /* น้ำตาลคาราเมลอ่อน */
+  color: #ffffff !important;
+}
+
+.error-text {
+  color: #a84655;
+  font-size: 0.85rem;
+  margin-top: 10px;
+}
+
+/* หน้าเมนูหลัก */
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-card {
+  padding: 20px;
+  border-radius: 15px;
+  color: #4a3b32;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(109, 76, 65, 0.08);
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-card:hover {
+  transform: translateY(-3px);
+}
+
+/* สีการ์ดเมนูแต่ละอัน */
+.bg-green { 
+  background: #f2e5d9; /* น้ำตาลเบจอ่อน */
+  border: 1px solid #e2d2c2;
+} 
+.bg-pink { 
+  background: #fbebee; /* ชมพูพาสเทลอ่อน */
+  border: 1px solid #f3d1d7;
+} 
+.bg-blue { 
+  background: #ffffff; /* สีขาว */
+  border: 1px solid #ebdcd3;
+} 
+
+/* หน้าต่าง Modal / เนื้อหาป๊อปอัพ */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(74, 59, 50, 0.4);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-body {
+  background: #ffffff;
+  width: 100%;
+  max-width: 380px;
+  padding: 20px;
+  border-radius: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  border: 2px solid #f4e3e6;
+}
+
+.close-btn {
+  background: #f5eae4;
+  color: #5d4037;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.section-content { display: none; }
+
+/* กล่องตัวนับเวลา (Timer Box) */
+.timer-box {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  background: #fdf0f2; /* กล่องสีชมพูละมุน */
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #f3d1d7;
+}
+
+.time-unit span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b5838d; /* ตัวเลขสีชมพูกุหลาบ */
+  display: block;
+}
+
+.time-unit small { 
+  font-size: 0.7rem; 
+  color: #7d6a62; 
+}
+
+.sub-text {
+  color: #8d7b73;
+  font-size: 0.85rem;
+}
+
+/* ซองจดหมาย */
+.envelope {
+  background: #f2e1e4;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px dashed #b5838d;
+  cursor: pointer;
+  margin-top: 15px;
+  color: #5d4037;
+}
+
+.letter-body {
+  margin-top: 15px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+  line-height: 1.6;
+  border: 1px solid #ebdcd3;
+}
+
+.hidden { display: none; }

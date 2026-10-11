@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Valentine's Day 💕</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&family=Mali:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- หน้าที่ 1: Cover Page -->
+  <div id="page-cover" class="page active">
+    <div class="card cover-card">
+      <div class="photo-frame">
+        <img src="https://via.placeholder.com/300x300/ffc0cb/ffffff?text=Our+Photo" id="cover-img" alt="รูปของเรา">
+      </div>
+      <h1 class="title">Happy Valentine's Day 💕</h1>
+      <button class="btn" onclick="goToPage('page-password')">Click here !</button>
+    </div>
+  </div>
+
+  <!-- หน้าที่ 2: Enter Password -->
+  <div id="page-password" class="page">
+    <div class="card">
+      <h2>Enter Password</h2>
+      <p class="hint">( hint : our anniversary DDMMYY )</p>
+      
+      <input type="password" id="pass-display" readonly placeholder="• • • • • •">
+      
+      <div class="keypad">
+        <button onclick="pressKey('1')">1</button>
+        <button onclick="pressKey('2')">2</button>
+        <button onclick="pressKey('3')">3</button>
+        <button onclick="pressKey('4')">4</button>
+        <button onclick="pressKey('5')">5</button>
+        <button onclick="pressKey('6')">6</button>
+        <button onclick="pressKey('7')">7</button>
+        <button onclick="pressKey('8')">8</button>
+        <button onclick="pressKey('9')">9</button>
+        <button onclick="clearKey()" class="btn-sub">Clear</button>
+        <button onclick="pressKey('0')">0</button>
+        <button onclick="checkPassword()" class="btn-sub btn-enter">Enter</button>
+      </div>
+      <p id="pass-error" class="error-text"></p>
+    </div>
+  </div>
+
+  <!-- หน้าที่ 3: Main Menu -->
+  <div id="page-menu" class="page">
+    <div class="menu-container">
+      <div class="menu-card bg-green" onclick="showSection('sec-timeline')">
+        <span>💖</span>
+        <h3>Timeline of us</h3>
+      </div>
+      <div class="menu-card bg-pink" onclick="showSection('sec-letter')">
+        <span>💌</span>
+        <h3>Love Letter</h3>
+      </div>
+      <div class="menu-card bg-blue" onclick="showSection('sec-timer')">
+        <span>⏰</span>
+        <h3>Moment of us</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- หมวดเนื้อหา (จะแสดงเมื่อกดเลือกเมนู) -->
+  <div id="content-modal" class="modal">
+    <div class="modal-body">
+      <button class="close-btn" onclick="closeModal()">✕ Back to Menu</button>
+      
+      <!-- Section: Timeline -->
+      <div id="sec-timeline" class="section-content">
+        <h2>Our Journey Together 🌹</h2>
+        <div class="timeline-item">
+          <h4>Jan 2024 - First Meeting</h4>
+          <p>เจอกันครั้งแรกที่ร้านกาแฟ...</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Feb 14, 2024 - First Date</h4>
+          <p>ไปทานข้าวด้วยกันวันวาเลนไทน์...</p>
+        </div>
+      </div>
+
+      <!-- Section: Love Letter -->
+      <div id="sec-letter" class="section-content">
+        <h2>Love Letter ✉️</h2>
+        <div class="envelope" onclick="toggleLetter()">
+          <div class="envelope-text">กดเพื่อเปิดอ่านจดหมาย 💌</div>
+          <div id="letter-body" class="letter-body hidden">
+            <p><b>My Love 💕</b></p>
+            <p>ขอบคุณที่อยู่เคียงข้างกันเสมอมา ทุกๆ วันที่ได้อยู่กับเธอคือของขวัญที่ดีที่สุด รักเธอนะครับ!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Moment Timer -->
+      <div id="sec-timer" class="section-content">
+        <h2>We've been in love for ❤️</h2>
+        <div class="timer-box">
+          <div class="time-unit"><span id="days">0</span><small>DAYS</small></div>
+          <div class="time-unit"><span id="hours">0</span><small>HOURS</small></div>
+          <div class="time-unit"><span id="minutes">0</span><small>MINS</small></div>
+          <div class="time-unit"><span id="seconds">0</span><small>SECS</small></div>
+        </div>
+        <p class="sub-text">...and counting every beautiful moment together 💕</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
