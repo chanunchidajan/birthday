@@ -3,38 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Endless Story ✨</title>
+  <title>Happy Birthday My Love 🤍</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Fonts Luxury & Editorial -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Background Animated Hearts / Glow -->
   <div class="bg-glow"></div>
 
-  <!-- Cover Page -->
+  <!-- หน้าแรก: Cover วันเกิด -->
   <div id="page-cover" class="page active">
     <div class="card cover-card">
-      <div class="luxury-badge">EST. 2024</div>
+      <div class="luxury-badge">SPECIAL DAY</div>
       <div class="photo-frame-hero">
-        <img src="us.jpg" alt="Our Photo" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800'">
+        <img src="us.jpg" alt="Birthday" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800'">
       </div>
-      <h1 class="hero-title">Happy Anniversary</h1>
-      <p class="hero-subtitle">To the one who holds my heart</p>
+      <h1 class="hero-title">Happy Birthday</h1>
+      <p class="hero-subtitle">To the most special person in my life ✨</p>
       <button class="btn-luxury" onclick="goToPage('page-password')">
-        <span>Enter Our World</span>
+        <span>Enter Birthday Vault</span>
         <i class="arrow">→</i>
       </button>
     </div>
   </div>
 
-  <!-- Password Page -->
+  <!-- หน้าใส่รหัสผ่าน -->
   <div id="page-password" class="page">
     <div class="card">
-      <div class="lock-icon">🔒</div>
-      <h2 class="section-title">Private Vault</h2>
-      <p class="hint">Enter our special anniversary date</p>
+      <div class="lock-icon">🎁</div>
+      <h2 class="section-title">Unlock Memories</h2>
+      <p class="hint">ใส่วันครบรอบของเรา (DDMMYY)</p>
       
       <input type="password" id="pass-display" readonly placeholder="• • • • • •">
       
@@ -56,99 +54,123 @@
     </div>
   </div>
 
-  <!-- Main Menu Page -->
+  <!-- หน้าเมนูหลักความทรงจำ -->
   <div id="page-menu" class="page">
     <div class="header-banner">
-      <p class="small-tag">MEMORIES & MOMENTS</p>
-      <h2 class="menu-title">Our Chapter</h2>
+      <p class="small-tag">BIRTHDAY MEMORY COLLECTION</p>
+      <h2 class="menu-title">Our Happy Gallery</h2>
     </div>
 
     <div class="menu-grid">
       <div class="menu-card" onclick="showSection('sec-timer')">
-        <div class="card-icon">⏳</div>
+        <div class="card-icon">🎂</div>
         <div class="card-text">
-          <h3>Moment of Us</h3>
-          <p>Counting every second together</p>
+          <h3>Age & Moments</h3>
+          <p>นับเวลาความทรงจำที่คุณเติบโตมา</p>
         </div>
       </div>
 
       <div class="menu-card" onclick="showSection('sec-gallery')">
-        <div class="card-icon">📷</div>
+        <div class="card-icon">📸</div>
         <div class="card-text">
-          <h3>Photo Gallery</h3>
-          <p>Our precious albums & photos</p>
+          <h3>Photo Albums</h3>
+          <p>รวมรูปถ่ายความทรงจำของเรา</p>
         </div>
       </div>
 
       <div class="menu-card" onclick="showSection('sec-timeline')">
-        <div class="card-icon">📜</div>
+        <div class="card-icon">📖</div>
         <div class="card-text">
-          <h3>Our Journey</h3>
-          <p>Milestones of our love story</p>
+          <h3>Birthday Story</h3>
+          <p>การเดินทางและเรื่องราวที่ผ่านมา</p>
         </div>
       </div>
 
       <div class="menu-card" onclick="showSection('sec-letter')">
-        <div class="card-icon">✉️</div>
+        <div class="card-icon">💌</div>
         <div class="card-text">
-          <h3>Love Letter</h3>
-          <p>A message from my heart</p>
+          <h3>Birthday Wish</h3>
+          <p>คำอวยพรและจดหมายสุดพิเศษ</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal View for Content -->
+  <!-- Popup แสดงเนื้อหา -->
   <div id="content-modal" class="modal">
     <div class="modal-body">
-      <button class="close-btn" onclick="closeModal()">✕ Back to Menu</button>
+      <button class="close-btn" onclick="closeModal()">✕ กลับหน้าเมนู</button>
       
-      <!-- Section: Timer -->
+      <!-- ส่วนที่ 1: ตัวนับเวลา -->
       <div id="sec-timer" class="section-content">
-        <h2 class="modal-title">Time Spent Together</h2>
-        <p class="modal-subtitle">We have been in love for</p>
+        <h2 class="modal-title">Time of Happiness</h2>
+        <p class="modal-subtitle">ช่วงเวลาแห่งความสุขตั้งแต่คุณเกิดมา</p>
         <div class="timer-grid">
           <div class="time-box"><span id="days">0</span><small>DAYS</small></div>
           <div class="time-box"><span id="hours">0</span><small>HOURS</small></div>
           <div class="time-box"><span id="minutes">0</span><small>MINS</small></div>
           <div class="time-box"><span id="seconds">0</span><small>SECS</small></div>
         </div>
-        <p class="quote">"Every second with you is my favorite memory."</p>
+        <p class="quote">"ขอบคุณที่เกิดมาทำให้โลกใบรอบตัวสดใสเสมอนะ ✨"</p>
       </div>
 
-      <!-- Section: Photo Gallery (อัลบั้มรูปสไตล์โพลารอยด์) -->
+      <!-- ส่วนที่ 2: อัลบั้มรูปสไลด์ได้ -->
       <div id="sec-gallery" class="section-content">
-        <h2 class="modal-title">Our Photo Album</h2>
-        <p class="modal-subtitle">Moments captured in time</p>
+        <h2 class="modal-title">Memory Albums</h2>
+        <p class="modal-subtitle">ปัดซ้าย-ขวาเพื่อดูรูปความทรงจำ 🤎</p>
         
         <div class="album-slider">
           <div class="polaroid-card">
             <div class="polaroid-img">
               <img src="us.jpg" alt="Photo 1" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600'">
             </div>
-            <p class="polaroid-caption">First Date at Cafe ☕</p>
+            <p class="polaroid-caption">Special Birthday Cake 🎂</p>
           </div>
 
           <div class="polaroid-card">
             <div class="polaroid-img">
               <img src="us2.jpg" alt="Photo 2" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600'">
             </div>
-            <p class="polaroid-caption">Our Trip to the Beach 🌊</p>
+            <p class="polaroid-caption">Our Favorite Trip ☕</p>
           </div>
 
           <div class="polaroid-card">
             <div class="polaroid-img">
               <img src="us3.jpg" alt="Photo 3" onerror="this.src='https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=600'">
             </div>
-            <p class="polaroid-caption">Valentine's Day Dinner 🍷</p>
+            <p class="polaroid-caption">Precious Smile 😊</p>
           </div>
         </div>
       </div>
 
-      <!-- Section: Timeline -->
+      <!-- ส่วนที่ 3: เส้นทางความทรงจำ -->
       <div id="sec-timeline" class="section-content">
-        <h2 class="modal-title">Our Milestones</h2>
+        <h2 class="modal-title">Birthday Milestones</h2>
         <div class="timeline-container">
           <div class="timeline-box">
-            <span class="date-tag">JAN 2024</span>
-            <h4>First Meeting</h4>
+            <span class="date-tag">CHAPTER 1</span>
+            <h4>The Beginning</h4>
+            <p>จุดเริ่มต้นเรื่องราวความทรงจำดีๆ ที่ได้รู้จักกัน</p>
+          </div>
+          <div class="timeline-box">
+            <span class="date-tag">CHAPTER 2</span>
+            <h4>Best Moments</h4>
+            <p>ทุกๆ รอยยิ้มและการเดินทางที่คุณอยู่ข้างๆ</p>
+          </div>
+          <div class="timeline-box">
+            <span class="date-tag">TODAY</span>
+            <h4>Happy Birthday!</h4>
+            <p>ขอให้ปีนี้เป็นปีที่เติบโตอย่างมีความสุขที่สุดครับ 🎉</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ส่วนที่ 4: จดหมายอวยพร -->
+      <div id="sec-letter" class="section-content">
+        <h2 class="modal-title">Special Wish</h2>
+        <div class="luxury-envelope" onclick="toggleLetter()">
+          <p class="env-title">✉️ กดเพื่อเปิดอ่านการ์ดวันเกิด</p>
+          <div id="letter-body" class="letter-content hidden">
+            <h3>Happy Birthday My Love,</h3>
+            <p>สุขสันต์วันเกิดนะครับ! ขอให้ปีนี้เป็นปีที่มีแต่รอยยิ้ม สุขภาพแข็งแรง ได้กินของอร่อยๆ และค้นพบความสุขในทุกๆ วัน</p>
+            <p>ขอบคุณที่เป็น

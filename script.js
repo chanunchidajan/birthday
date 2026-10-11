@@ -1,16 +1,19 @@
-// 1. กำหนดรหัสผ่านวันครบรอบ (แก้ไขเลขตรงนี้ได้)
+// 1. ตั้งรหัสผ่าน (วันเกิด เช่น 010624 หรือตามที่คุณตั้ง)
 const CORRECT_PASSWORD = "010624"; 
 
-// 2. กำหนดวันเริ่มคบกัน สำหรับตัวนับเวลา (ปี, เดือน-1, วัน, ชั่วโ่ฒง, นาที)
-// หมายเหตุ: เดือนใน JavaScript เริ่มจาก 0 (มกราคม=0, ธันวาคม=11)
-const START_DATE = new Date(2024,5, 1, 0, 0, 0); // ตัวอย่าง: 4 พฤศจิกายน 2024
+// 2. ตั้งวัน/เดือน/ปีเกิด เพื่อใช้นับเวลา (ปี ค.ศ., เดือน-1, วัน, ชั่วโมง, นาที, วินาที)
+// ตัวอย่าง: เกิดวันที่ 1 มิถุนายน 2024 -> new Date(2024, 5, 1, 0, 0, 0)
+const BIRTH_DATE = new Date(2024, 5, 1, 0, 0, 0); 
 
 let currentInput = "";
 
-// ฟังก์ชันสลับหน้า
+// ฟังก์ชันสลับหน้าหลัก
 function goToPage(pageId) {
   document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-  document.getElementById(pageId).classList.add('active');
+  const targetPage = document.getElementById(pageId);
+  if (targetPage) {
+    targetPage.classList.add('active');
+  }
 }
 
 // ฟังก์ชันปุ่มกดรหัสผ่าน
@@ -29,47 +32,49 @@ function clearKey() {
 
 function checkPassword() {
   if (currentInput === CORRECT_PASSWORD) {
-    clearKey();
     goToPage('page-menu');
+    startTimer();
   } else {
-    document.getElementById('pass-error').innerText = "รหัสผ่านไม่ถูกต้อง ลองใหม่อีกครั้งนะ 💕";
+    document.getElementById('pass-error').innerText = "รหัสผ่านไม่ถูกต้อง ลองใหม่อีกครั้งครับ";
     clearKey();
   }
 }
 
-// ฟังก์ชันเปิดดูหมวดหมู่เนื้อหา
-function showSection(sectionId) {
-  document.getElementById('content-modal').style.display = 'flex';
+// ฟังก์ชันเปิด Modal แสดงเนื้อหาแต่ละเมนู
+function showSection(secId) {
   document.querySelectorAll('.section-content').forEach(sec => sec.style.display = 'none');
-  document.getElementById(sectionId).style.display = 'block';
+  const targetSec = document.getElementById(secId);
+  if (targetSec) {
+    targetSec.style.display = 'block';
+  }
+  document.getElementById('content-modal').style.display = 'flex';
 }
 
 function closeModal() {
   document.getElementById('content-modal').style.display = 'none';
 }
 
-// ฟังก์ชันเปิด/ปิด ซองจดหมาย
 function toggleLetter() {
   const letter = document.getElementById('letter-body');
-  letter.classList.toggle('hidden');
+  if (letter) {
+    letter.classList.toggle('hidden');
+  }
 }
 
-// ฟังก์ชันนับเวลาถอยหลัง/นับเวลาคบกัน
-function updateTimer() {
-  const now = new Date();
-  const diff = now - START_DATE; // ผลลัพธ์เป็น มิลลิวินาที
+// ฟังก์ชันคำนวณเวลานับถอยหลัง / เวลาที่ผ่านไป
+function startTimer() {
+  setInterval(() => {
+    const now = new Date();
+    const diff = now - BIRTH_DATE;
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / 1000 / 60) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
 
-  document.getElementById('days').innerText = days;
-  document.getElementById('hours').innerText = hours;
-  document.getElementById('minutes').innerText = minutes;
-  document.getElementById('seconds').innerText = seconds;
+    if (document.getElementById('days')) document.getElementById('days').innerText = days;
+    if (document.getElementById('hours')) document.getElementById('hours').innerText = hours;
+    if (document.getElementById('minutes')) document.getElementById('minutes').innerText = minutes;
+    if (document.getElementById('seconds')) document.getElementById('seconds').innerText = seconds;
+  }, 1000);
 }
-
-// อัปเดตเวลาทุกๆ 1 วินาที
-setInterval(updateTimer, 1000);
-updateTimer();
