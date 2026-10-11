@@ -1,6 +1,6 @@
-// ประกาศตัวแปรตั้งค่าด้านบนสุด
+// ตั้งค่ารหัสผ่านวันครบรอบ และวันเริ่มคบ (01/06/2024)
 const CORRECT_PASSWORD = "010624"; 
-const BIRTH_DATE = new Date(2024, 5, 1, 0, 0, 0); 
+const START_DATE = new Date(2024, 5, 1, 0, 0, 0); 
 
 let currentInput = "";
 
@@ -15,7 +15,7 @@ function goToPage(pageId) {
   }
 }
 
-// ฟังก์ชันแป้นพิมพ์รหัสผ่าน
+// แป้นพิมพ์รหัสผ่าน
 function pressKey(num) {
   if (currentInput.length < 6) {
     currentInput += num;
@@ -37,13 +37,13 @@ function checkPassword() {
     startTimer();
   } else {
     if (document.getElementById('pass-error')) {
-      document.getElementById('pass-error').innerText = "รหัสผ่านไม่ถูกต้อง ลองใหม่อีกครั้งครับ";
+      document.getElementById('pass-error').innerText = "รหัสผ่านไม่ถูกต้อง ลองใส่วันครบรอบนะ 💕";
     }
     clearKey();
   }
 }
 
-// ฟังก์ชันเปิด-ปิด Modal แสดงเนื้อหา
+// ฟังก์ชันเปิด Modal แต่ละหน้า
 function showSection(secId) {
   const secs = document.querySelectorAll('.section-content');
   secs.forEach(s => s.style.display = 'none');
@@ -66,11 +66,11 @@ function toggleLetter() {
   }
 }
 
-// ฟังก์ชันนับเวลา
+// คำนวณเวลานับตั้งแต่วันที่คบกัน
 function startTimer() {
   setInterval(() => {
     const now = new Date();
-    const diff = now - BIRTH_DATE;
+    const diff = now - START_DATE;
 
     if (diff < 0) return;
 

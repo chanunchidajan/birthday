@@ -3,36 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday My Love 🤍</title>
+  <title>Happy Birthday Stop 💖</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Fonts: Playfair Display, Montserrat & Prompt -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="bg-glow"></div>
+  <div class="sparkle-bg"></div>
 
-  <!-- Cover Page -->
+  <!-- หน้าแรก: Cover -->
   <div id="page-cover" class="page active">
     <div class="card cover-card">
-      <div class="luxury-badge">SPECIAL DAY</div>
+      <div class="luxury-badge">✨ HAPPY BIRTHDAY ✨</div>
       <div class="photo-frame-hero">
-        <img src="us.jpg" alt="Birthday" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800'">
+        <img src="us.jpg" alt="Stop Birthday" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800'">
       </div>
-      <h1 class="hero-title">Happy Birthday</h1>
-      <p class="hero-subtitle">To the most special person in my life ✨</p>
-      <button type="button" class="btn-luxury" onclick="goToPage('page-password')">
-        <span>Enter Birthday Vault</span>
-        <i class="arrow">→</i>
+      <h1 class="hero-title">Happy Birthday<br><span class="highlight-name">Stop 🎀</span></h1>
+      <p class="hero-subtitle">To my favorite person in the world</p>
+      <button type="button" class="btn-pink" onclick="goToPage('page-password')">
+        <span>Enter My Heart</span>
+        <i class="arrow">💖</i>
       </button>
     </div>
   </div>
 
-  <!-- Password Page -->
+  <!-- หน้าใส่รหัสผ่านวันครบรอบ -->
   <div id="page-password" class="page">
     <div class="card">
-      <div class="lock-icon">🎁</div>
-      <h2 class="section-title">Unlock Memories</h2>
-      <p class="hint">ใส่วันครบรอบของเรา (DDMMYY)</p>
+      <div class="lock-icon">🔒</div>
+      <h2 class="section-title">Anniversary Lock</h2>
+      <p class="hint">ใส่วันครบรอบของเรา (010624)</p>
       
       <input type="password" id="pass-display" readonly placeholder="• • • • • •">
       
@@ -54,67 +55,150 @@
     </div>
   </div>
 
-  <!-- Main Menu Page -->
+  <!-- หน้าเมนูหลัก -->
   <div id="page-menu" class="page">
     <div class="header-banner">
-      <p class="small-tag">BIRTHDAY MEMORY COLLECTION</p>
-      <h2 class="menu-title">Our Happy Gallery</h2>
+      <p class="small-tag">FOR MY SWEETHEART</p>
+      <h2 class="menu-title">Stop's World 💕</h2>
     </div>
 
     <div class="menu-grid">
       <div class="menu-card" onclick="showSection('sec-timer')">
-        <div class="card-icon">🎂</div>
+        <div class="card-icon">⏳</div>
         <div class="card-text">
-          <h3>Age & Moments</h3>
-          <p>นับเวลาความทรงจำที่คุณเติบโตมา</p>
+          <h3>Days Together</h3>
+          <p>เวลาที่เราได้คบและอยู่ด้วยกัน</p>
         </div>
       </div>
 
       <div class="menu-card" onclick="showSection('sec-gallery')">
-        <div class="card-icon">📸</div>
+        <div class="card-icon">📷</div>
         <div class="card-text">
-          <h3>Photo Albums</h3>
-          <p>รวมรูปถ่ายความทรงจำของเรา</p>
+          <h3>Our Photo Gallery</h3>
+          <p>รูปภาพความทรงจำของเราสองคน</p>
         </div>
       </div>
 
-      <div class="menu-card" onclick="showSection('sec-timeline')">
-        <div class="card-icon">📖</div>
+      <div class="menu-card" onclick="showSection('sec-places')">
+        <div class="card-icon">📍</div>
         <div class="card-text">
-          <h3>Birthday Story</h3>
-          <p>การเดินทางและเรื่องราวที่ผ่านมา</p>
+          <h3>Our Favorite Places</h3>
+          <p>สถานที่ที่เราชอบไปทำกิจกรรมด้วยกัน</p>
         </div>
       </div>
 
-      <div class="menu-card" onclick="showSection('sec-letter')">
+      <div class="menu-card" onclick="showSection('sec-feelings')">
+        <div class="card-icon">💭</div>
+        <div class="card-text">
+          <h3>Deep Thoughts</h3>
+          <p>ความในใจและความรู้สึกที่มีต่อสต้อป</p>
+        </div>
+      </div>
+
+      <div class="menu-card" onclick="showSection('sec-wish')">
         <div class="card-icon">💌</div>
         <div class="card-text">
           <h3>Birthday Wish</h3>
-          <p>คำอวยพรและจดหมายสุดพิเศษ</p>
+          <p>คำอวยพรและจดหมายลับสุดพิเศษ</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal View -->
+  <!-- Popup Modal แสดงรายละเอียดแต่ละเมนู -->
   <div id="content-modal" class="modal">
     <div class="modal-body">
       <button type="button" class="close-btn" onclick="closeModal()">✕ กลับหน้าเมนู</button>
       
-      <!-- Section Timer -->
+      <!-- 1. นับเวลา -->
       <div id="sec-timer" class="section-content">
-        <h2 class="modal-title">Time of Happiness</h2>
-        <p class="modal-subtitle">ช่วงเวลาแห่งความสุขตั้งแต่คุณเกิดมา</p>
+        <h2 class="modal-title">Time Together</h2>
+        <p class="modal-subtitle">เราคบกันมานานเท่าไหร่แล้ว 💕</p>
         <div class="timer-grid">
           <div class="time-box"><span id="days">0</span><small>DAYS</small></div>
           <div class="time-box"><span id="hours">0</span><small>HOURS</small></div>
           <div class="time-box"><span id="minutes">0</span><small>MINS</small></div>
           <div class="time-box"><span id="seconds">0</span><small>SECS</small></div>
         </div>
-        <p class="quote">"ขอบคุณที่เกิดมาทำให้โลกใบรอบตัวสดใสเสมอนะ ✨"</p>
+        <p class="quote">"ตั้งแต่วันที่ 01/06/2024 ทุกวันก็มีความหมายมากขึ้นเพราะสต้อปนะ 💗"</p>
       </div>
 
-      <!-- Section Gallery -->
+      <!-- 2. อัลบั้มรูป -->
       <div id="sec-gallery" class="section-content">
-        <h2 class="modal-title">Memory Albums</h2>
-        <p class="modal-subtitle">ปัดซ้าย-ขวาเพื่อดู
+        <h2 class="modal-title">Photo Album</h2>
+        <p class="modal-subtitle">ปัดซ้าย-ขวาเพื่อดูรูปของเรา 📸</p>
+        
+        <div class="album-slider">
+          <div class="polaroid-card">
+            <div class="polaroid-img">
+              <img src="us.jpg" alt="Photo 1" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600'">
+            </div>
+            <p class="polaroid-caption">First Memory 🤍</p>
+          </div>
+
+          <div class="polaroid-card">
+            <div class="polaroid-img">
+              <img src="us2.jpg" alt="Photo 2" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600'">
+            </div>
+            <p class="polaroid-caption">Date Night ☕</p>
+          </div>
+
+          <div class="polaroid-card">
+            <div class="polaroid-img">
+              <img src="us3.jpg" alt="Photo 3" onerror="this.src='https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=600'">
+            </div>
+            <p class="polaroid-caption">Your Cute Smile 😊</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. สถานที่ที่ชอบ -->
+      <div id="sec-places" class="section-content">
+        <h2 class="modal-title">Favorite Spots</h2>
+        <p class="modal-subtitle">สถานที่แห่งความทรงจำของเรา 🗺️</p>
+        <div class="places-list">
+          <div class="place-card">
+            <h4>☕ คาเฟ่โปรดของเรา</h4>
+            <p>ที่ที่เราชอบไปนั่งกินขนม ดื่มกาแฟ และนั่งคุยกันเพลินๆ</p>
+          </div>
+          <div class="place-card">
+            <h4>🌊 ทะเล / ที่เที่ยวธรรมชาติ</h4>
+            <p>ที่ที่เราได้ไปสูดอากาศบริสุทธิ์และถ่ายรูปสวยๆ ด้วยกัน</p>
+          </div>
+          <div class="place-card">
+            <h4>🍿 โรงหนัง / ร้านอาหารมื้อดึก</h4>
+            <p>จุดปักหมุดประจำเวลาเลิกงานหรือวันหยุดสุดสัปดาห์</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. ความในใจ -->
+      <div id="sec-feelings" class="section-content">
+        <h2 class="modal-title">From My Heart</h2>
+        <div class="feeling-box">
+          <p>ถึงสต้อป...</p>
+          <p>ขอบคุณที่เป็นความน่ารักและเป็นรอยยิ้มให้กับเราในทุกๆ วันนะ ไม่ว่าจะเหนื่อยจากอะไรมา พอได้คุยได้เจอสต้อปก็รู้สึกสบายใจขึ้นเสมอเลย</p>
+          <p>ดีใจมากๆ ที่ได้มีสต้อปอยู่ในชีวิตนะ 💕</p>
+        </div>
+      </div>
+
+      <!-- 5. คำอวยพรวันเกิด -->
+      <div id="sec-wish" class="section-content">
+        <h2 class="modal-title">Happy Birthday Wish</h2>
+        <div class="luxury-envelope" onclick="toggleLetter()">
+          <p class="env-title">💌 กดตรงนี้เพื่อเปิดอ่านการ์ดอวยพร</p>
+          <div id="letter-body" class="letter-content hidden">
+            <h3>Happy Birthday นะครับสต้อป! 🎉</h3>
+            <p>ขอให้วันเกิดปีนี้มีความสุขมากๆ มีแต่รอยยิ้ม ขอให้ได้กินของอร่อยที่ชอบ สุขภาพแข็งแรง และสมหวังในสิ่งที่ตั้งใจทำทุกอย่างเลยนะ</p>
+            <p>อยากอยู่เคียงข้างและอวยพรวันเกิดแบบนี้ให้สต้อปไปทุกๆ ปีเลยครับ ❤️</p>
+            <p class="sign">Love You Always ✨</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
