@@ -3,28 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday bby 💕</title>
+  <title>Our Endless Story ✨</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&family=Mali:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Fonts Luxury & Editorial -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- หน้าที่ 1: Cover Page -->
+  <!-- Background Animated Hearts / Glow -->
+  <div class="bg-glow"></div>
+
+  <!-- Cover Page -->
   <div id="page-cover" class="page active">
     <div class="card cover-card">
-      <div class="photo-frame">
-        <img src="https://via.placeholder.com/300x300/ffc0cb/ffffff?text=Our+Photo" id="cover-img" alt="รูปของเรา">
+      <div class="luxury-badge">EST. 2024</div>
+      <div class="photo-frame-hero">
+        <img src="us.jpg" alt="Our Photo" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800'">
       </div>
-      <h1 class="title">Happy Birthday bby 💕</h1>
-      <button class="btn" onclick="goToPage('page-password')">Click here !</button>
+      <h1 class="hero-title">Happy Anniversary</h1>
+      <p class="hero-subtitle">To the one who holds my heart</p>
+      <button class="btn-luxury" onclick="goToPage('page-password')">
+        <span>Enter Our World</span>
+        <i class="arrow">→</i>
+      </button>
     </div>
   </div>
 
-  <!-- หน้าที่ 2: Enter Password -->
+  <!-- Password Page -->
   <div id="page-password" class="page">
     <div class="card">
-      <h2>Enter Password</h2>
-      <p class="hint">( hint : our anniversary DDMMYY )</p>
+      <div class="lock-icon">🔒</div>
+      <h2 class="section-title">Private Vault</h2>
+      <p class="hint">Enter our special anniversary date</p>
       
       <input type="password" id="pass-display" readonly placeholder="• • • • • •">
       
@@ -32,83 +42,113 @@
         <button onclick="pressKey('1')">1</button>
         <button onclick="pressKey('2')">2</button>
         <button onclick="pressKey('3')">3</button>
-        <button onclick="pressKey('4')">64</button>
+        <button onclick="pressKey('4')">4</button>
         <button onclick="pressKey('5')">5</button>
         <button onclick="pressKey('6')">6</button>
         <button onclick="pressKey('7')">7</button>
         <button onclick="pressKey('8')">8</button>
         <button onclick="pressKey('9')">9</button>
-        <button onclick="clearKey()" class="btn-sub">Clear</button>
+        <button onclick="clearKey()" class="btn-sub">C</button>
         <button onclick="pressKey('0')">0</button>
-        <button onclick="checkPassword()" class="btn-sub btn-enter">Enter</button>
+        <button onclick="checkPassword()" class="btn-sub btn-enter">↵</button>
       </div>
       <p id="pass-error" class="error-text"></p>
     </div>
   </div>
 
-  <!-- หน้าที่ 3: Main Menu -->
+  <!-- Main Menu Page -->
   <div id="page-menu" class="page">
-    <div class="menu-container">
-      <div class="menu-card bg-green" onclick="showSection('sec-timeline')">
-        <span>💖</span>
-        <h3>Timeline of us</h3>
+    <div class="header-banner">
+      <p class="small-tag">MEMORIES & MOMENTS</p>
+      <h2 class="menu-title">Our Chapter</h2>
+    </div>
+
+    <div class="menu-grid">
+      <div class="menu-card" onclick="showSection('sec-timer')">
+        <div class="card-icon">⏳</div>
+        <div class="card-text">
+          <h3>Moment of Us</h3>
+          <p>Counting every second together</p>
+        </div>
       </div>
-      <div class="menu-card bg-pink" onclick="showSection('sec-letter')">
-        <span>💌</span>
-        <h3>Love Letter</h3>
+
+      <div class="menu-card" onclick="showSection('sec-gallery')">
+        <div class="card-icon">📷</div>
+        <div class="card-text">
+          <h3>Photo Gallery</h3>
+          <p>Our precious albums & photos</p>
+        </div>
       </div>
-      <div class="menu-card bg-blue" onclick="showSection('sec-timer')">
-        <span>⏰</span>
-        <h3>Moment of us</h3>
+
+      <div class="menu-card" onclick="showSection('sec-timeline')">
+        <div class="card-icon">📜</div>
+        <div class="card-text">
+          <h3>Our Journey</h3>
+          <p>Milestones of our love story</p>
+        </div>
+      </div>
+
+      <div class="menu-card" onclick="showSection('sec-letter')">
+        <div class="card-icon">✉️</div>
+        <div class="card-text">
+          <h3>Love Letter</h3>
+          <p>A message from my heart</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- หมวดเนื้อหา (จะแสดงเมื่อกดเลือกเมนู) -->
+  <!-- Modal View for Content -->
   <div id="content-modal" class="modal">
     <div class="modal-body">
       <button class="close-btn" onclick="closeModal()">✕ Back to Menu</button>
       
-      <!-- Section: Timeline -->
-      <div id="sec-timeline" class="section-content">
-        <h2>Our Journey Together 🌹</h2>
-        <div class="timeline-item">
-          <h4>Jan 2024 - First Meeting</h4>
-          <p>เจอกันครั้งแรกตอนเป็นตัวจิ๋ว</p>
+      <!-- Section: Timer -->
+      <div id="sec-timer" class="section-content">
+        <h2 class="modal-title">Time Spent Together</h2>
+        <p class="modal-subtitle">We have been in love for</p>
+        <div class="timer-grid">
+          <div class="time-box"><span id="days">0</span><small>DAYS</small></div>
+          <div class="time-box"><span id="hours">0</span><small>HOURS</small></div>
+          <div class="time-box"><span id="minutes">0</span><small>MINS</small></div>
+          <div class="time-box"><span id="seconds">0</span><small>SECS</small></div>
         </div>
-        <div class="timeline-item">
-          <h4>Feb 14, 2024 - First Date</h4>
-          <p>Siam Paragon</p>
-        </div>
+        <p class="quote">"Every second with you is my favorite memory."</p>
       </div>
 
-      <!-- Section: Love Letter -->
-      <div id="sec-letter" class="section-content">
-        <h2>Love Letter ✉️</h2>
-        <div class="envelope" onclick="toggleLetter()">
-          <div class="envelope-text">กดเพื่อเปิดอ่านจดหมาย 💌</div>
-          <div id="letter-body" class="letter-body hidden">
-            <p><b>My Love 💕</b></p>
-            <p>ขอบคุณที่อยู่เคียงข้างกันเสมอมา ทุกๆ วันที่ได้อยู่กับเธอคือของขวัญที่ดีที่สุด รักเธอนะครับ!</p>
+      <!-- Section: Photo Gallery (อัลบั้มรูปสไตล์โพลารอยด์) -->
+      <div id="sec-gallery" class="section-content">
+        <h2 class="modal-title">Our Photo Album</h2>
+        <p class="modal-subtitle">Moments captured in time</p>
+        
+        <div class="album-slider">
+          <div class="polaroid-card">
+            <div class="polaroid-img">
+              <img src="us.jpg" alt="Photo 1" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600'">
+            </div>
+            <p class="polaroid-caption">First Date at Cafe ☕</p>
+          </div>
+
+          <div class="polaroid-card">
+            <div class="polaroid-img">
+              <img src="us2.jpg" alt="Photo 2" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600'">
+            </div>
+            <p class="polaroid-caption">Our Trip to the Beach 🌊</p>
+          </div>
+
+          <div class="polaroid-card">
+            <div class="polaroid-img">
+              <img src="us3.jpg" alt="Photo 3" onerror="this.src='https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=600'">
+            </div>
+            <p class="polaroid-caption">Valentine's Day Dinner 🍷</p>
           </div>
         </div>
       </div>
 
-      <!-- Section: Moment Timer -->
-      <div id="sec-timer" class="section-content">
-        <h2>We've been in love for ❤️</h2>
-        <div class="timer-box">
-          <div class="time-unit"><span id="days">0</span><small>DAYS</small></div>
-          <div class="time-unit"><span id="hours">0</span><small>HOURS</small></div>
-          <div class="time-unit"><span id="minutes">0</span><small>MINS</small></div>
-          <div class="time-unit"><span id="seconds">0</span><small>SECS</small></div>
-        </div>
-        <p class="sub-text">...and counting every beautiful moment together 💕</p>
-      </div>
-
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+      <!-- Section: Timeline -->
+      <div id="sec-timeline" class="section-content">
+        <h2 class="modal-title">Our Milestones</h2>
+        <div class="timeline-container">
+          <div class="timeline-box">
+            <span class="date-tag">JAN 2024</span>
+            <h4>First Meeting</h4>
