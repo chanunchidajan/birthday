@@ -1,8 +1,10 @@
+// ประกาศตัวแปรตั้งค่าด้านบนสุด
 const CORRECT_PASSWORD = "010624"; 
 const BIRTH_DATE = new Date(2024, 5, 1, 0, 0, 0); 
 
 let currentInput = "";
 
+// ฟังก์ชันสลับหน้า
 function goToPage(pageId) {
   const pages = document.querySelectorAll('.page');
   pages.forEach(p => p.classList.remove('active'));
@@ -13,6 +15,7 @@ function goToPage(pageId) {
   }
 }
 
+// ฟังก์ชันแป้นพิมพ์รหัสผ่าน
 function pressKey(num) {
   if (currentInput.length < 6) {
     currentInput += num;
@@ -23,7 +26,9 @@ function pressKey(num) {
 function clearKey() {
   currentInput = "";
   document.getElementById('pass-display').value = "";
-  document.getElementById('pass-error').innerText = "";
+  if (document.getElementById('pass-error')) {
+    document.getElementById('pass-error').innerText = "";
+  }
 }
 
 function checkPassword() {
@@ -31,11 +36,14 @@ function checkPassword() {
     goToPage('page-menu');
     startTimer();
   } else {
-    document.getElementById('pass-error').innerText = "รหัสผ่านไม่ถูกต้อง ลองใหม่อีกครั้งครับ";
+    if (document.getElementById('pass-error')) {
+      document.getElementById('pass-error').innerText = "รหัสผ่านไม่ถูกต้อง ลองใหม่อีกครั้งครับ";
+    }
     clearKey();
   }
 }
 
+// ฟังก์ชันเปิด-ปิด Modal แสดงเนื้อหา
 function showSection(secId) {
   const secs = document.querySelectorAll('.section-content');
   secs.forEach(s => s.style.display = 'none');
@@ -58,10 +66,13 @@ function toggleLetter() {
   }
 }
 
+// ฟังก์ชันนับเวลา
 function startTimer() {
   setInterval(() => {
     const now = new Date();
     const diff = now - BIRTH_DATE;
+
+    if (diff < 0) return;
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
